@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="À propos — MJIA Consulting. 26 ans d'infrastructure, diplôme IA 2025, formation initiale en enseignement. Consultant indépendant SASU.">
+  <title>À propos — MJIA Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0d0d0d;--paper:#f7f5f0;--gold:#b8943f;--gold-light:#d4af6a;--muted:#6b6b6b;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--paper);}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 3rem;border-bottom:.5px solid rgba(184,148,63,.2);background:rgba(13,13,13,.97);position:sticky;top:0;z-index:100;}
+    .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.04em;color:var(--paper);text-decoration:none;}
+    .logo span{color:var(--gold);}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{font-size:13px;color:rgba(247,245,240,.6);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold-light);}
+    .nav-cta{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:.5px solid var(--gold);padding:9px 20px;border-radius:2px;text-decoration:none;transition:all .2s;}
+    .nav-cta:hover{background:var(--gold);color:var(--ink);}
+    section{padding:5rem 3rem;}
+    .section-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;display:flex;align-items:center;gap:10px;}
+    .section-label::before{content:'';display:block;width:24px;height:.5px;background:var(--gold);}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;color:var(--paper);margin-bottom:.8rem;line-height:1.2;}
+
+    .hero{padding:5rem 3rem 4rem;border-bottom:.5px solid rgba(184,148,63,.15);position:relative;overflow:hidden;}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.1;color:var(--paper);max-width:720px;margin-bottom:1.4rem;}
+    .hero h1 em{font-style:normal;color:var(--gold-light);}
+    .hero-sub{font-size:15px;font-weight:300;line-height:1.9;color:rgba(247,245,240,.5);max-width:520px;}
+    .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:10px;}
+    .eyebrow::before{content:'';display:block;width:24px;height:.5px;background:var(--gold);}
+
+    .philo{background:#0a0a0a;border-bottom:.5px solid rgba(184,148,63,.15);}
+    .philo-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .philo-quote{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--paper);line-height:1.45;border-left:2px solid var(--gold);padding-left:1.8rem;font-style:italic;margin-bottom:2rem;}
+    .philo-text{font-size:14px;color:rgba(247,245,240,.5);line-height:1.95;margin-bottom:1.2rem;}
+    .values-list{list-style:none;margin-top:.5rem;}
+    .values-list li{font-size:13px;color:rgba(247,245,240,.6);padding:.75rem 0;border-bottom:.5px solid rgba(247,245,240,.07);display:flex;gap:12px;align-items:flex-start;line-height:1.6;}
+    .values-list li::before{content:'—';color:var(--gold);flex-shrink:0;}
+
+    .timeline{border-bottom:.5px solid rgba(184,148,63,.15);}
+    .tl-items{position:relative;margin-top:2.5rem;}
+    .tl-items::before{content:'';position:absolute;left:110px;top:0;bottom:0;width:.5px;background:rgba(184,148,63,.2);}
+    .tl-item{display:grid;grid-template-columns:110px 1fr;gap:2rem;margin-bottom:2.5rem;position:relative;}
+    .tl-item::before{content:'';position:absolute;left:107px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--gold);border:1.5px solid var(--ink);}
+    .tl-date{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--gold-light);text-align:right;padding-top:2px;line-height:1.3;}
+    .tl-title{font-size:14px;font-weight:500;color:var(--paper);margin-bottom:.3rem;}
+    .tl-desc{font-size:13px;color:rgba(247,245,240,.45);line-height:1.7;}
+
+    .competences{background:#0a0a0a;border-bottom:.5px solid rgba(184,148,63,.15);}
+    .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,148,63,.1);margin-top:2.5rem;}
+    .comp-card{background:#111;padding:2rem 1.8rem;transition:background .2s;}
+    .comp-card:hover{background:#161410;}
+    .comp-domain{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+    .comp-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--paper);margin-bottom:.8rem;}
+    .comp-tags{display:flex;flex-wrap:wrap;gap:6px;}
+    .ctag{font-size:11px;color:rgba(247,245,240,.5);border:.5px solid rgba(247,245,240,.1);padding:3px 10px;border-radius:1px;}
+
+    .certifs{border-bottom:.5px solid rgba(184,148,63,.15);}
+    .certif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(184,148,63,.08);margin-top:2.5rem;}
+    .certif-card{background:#111;padding:1.8rem;display:flex;gap:1.5rem;align-items:flex-start;transition:background .2s;}
+    .certif-card:hover{background:#161410;}
+    .certif-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px;}
+    .certif-dot.pending{background:transparent;border:1.5px solid var(--gold);}
+    .certif-name{font-size:13px;font-weight:500;color:var(--paper);margin-bottom:.3rem;}
+    .certif-org{font-size:12px;color:var(--muted);}
+    .certif-status{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.4rem;}
+
+    .sasu-section{background:#0a0a0a;border-bottom:.5px solid rgba(184,148,63,.15);}
+    .sasu-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .sasu-text{font-size:14px;color:rgba(247,245,240,.5);line-height:1.95;margin-bottom:1.2rem;}
+
+    .cta-band{background:var(--gold);padding:4rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ink);max-width:480px;line-height:1.3;}
+    .btn-dark{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:14px 32px;border-radius:2px;text-decoration:none;}
+    footer{background:var(--ink);padding:2.5rem 3rem;border-top:.5px solid rgba(184,148,63,.15);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+    .footer-links a{font-size:12px;color:rgba(247,245,240,.35);text-decoration:none;letter-spacing:.06em;}
+    .footer-copy{font-size:11px;color:rgba(247,245,240,.25);}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}section{padding:3rem 1.5rem;}.philo-inner,.sasu-inner{grid-template-columns:1fr;gap:2rem;}.comp-grid{grid-template-columns:1fr;}.certif-grid{grid-template-columns:1fr;}.tl-items::before{left:80px;}.tl-item{grid-template-columns:80px 1fr;}.tl-item::before{left:77px;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">MJIA<span>.</span>Consulting</a>
+  <ul class="nav-links">
+    <li><a href="ia-data.html">IA & Data</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="apropos.html" class="active">À propos</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Prendre contact</a>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">À propos — Le fondateur</div>
+  <h1>Une vie entière<br>au service de <em>l'exigence.</em></h1>
+  <p class="hero-sub">Ingénieur infrastructure de vocation, enseignant de formation, data scientist par conviction. Trois trajectoires qui convergent vers un seul objectif : construire des systèmes qui durent et des équipes qui progressent.</p>
+</section>
+
+<section class="philo">
+  <div class="philo-inner">
+    <div>
+      <div class="section-label">Ma philosophie</div>
+      <blockquote class="philo-quote">"Je ne livre pas des slides. Je livre des résultats — et je reste jusqu'à ce qu'ils soient là."</blockquote>
+      <p class="philo-text">Ce qui me définit n'est pas une liste de certifications. C'est une façon de travailler : aller au fond des choses, ne pas contourner la difficulté, et transmettre avec la même exigence que j'applique à mes propres projets.</p>
+      <p class="philo-text">En 26 ans, j'ai construit des plateformes de zéro, résolu des incidents à 3h du matin, formé des dizaines d'ingénieurs et développé des modèles ML en conditions réelles.</p>
+    </div>
+    <div>
+      <div class="section-label">Ce qui me différencie</div>
+      <ul class="values-list">
+        <li>Formé à l'enseignement avant d'être ingénieur — la pédagogie est un réflexe, pas un effort</li>
+        <li>26 ans d'infrastructure réelle : migrations live, incidents critiques, SLA à tenir coûte que coûte</li>
+        <li>Diplômé IA/Data Science en 2025 — la formation la plus récente sur l'infrastructure la plus mature</li>
+        <li>Indépendant en SASU : vous parlez directement à celui qui fait le travail, sans intermédiaire</li>
+        <li>Élu formateur interne par mon management pendant des années — la transmission est reconnue par les pairs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="section-label">Trajectoire</div>
+  <h2 class="section-title">Une carrière construite sur la profondeur.</h2>
+  <div class="tl-items">
+    <div class="tl-item">
+      <div class="tl-date">2025</div>
+      <div>
+        <div class="tl-title">Diplôme Ingénieur AI Engineer</div>
+        <div class="tl-desc">12 projets ML validés · 795 heures · Computer Vision, NLP, Scoring, Big Data Cloud, Optimisation énergétique.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2019 →</div>
+      <div>
+        <div class="tl-title">Lead OpenShift & Cloud — Grand compte secteur mutuelle</div>
+        <div class="tl-desc">Construction from scratch d'une plateforme IBM Cloud ROKS HyperShift · ~1 000 applications · SLA 99,97% · PRA multirégion.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">~2010</div>
+      <div>
+        <div class="tl-title">Lead Ingénieur Systèmes Unix — Secteur financier</div>
+        <div class="tl-desc">Administration Unix/AIX en environnement bancaire · sécurité, continuité, haute disponibilité.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">~2000</div>
+      <div>
+        <div class="tl-title">Lead Infrastructure — Grande distribution</div>
+        <div class="tl-desc">16 ans · Lead Solaris/LDOM/AIX · migrations datacenter live · IBM SVC/DS8000 · EMC · NetApp · Brocade.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Début</div>
+      <div>
+        <div class="tl-title">Enseignant Physique-Chimie</div>
+        <div class="tl-desc">2 ans de formation pédagogique initiale · Stages en établissements scolaires · La transmission comme fondation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="competences">
+  <div class="section-label">Compétences techniques</div>
+  <h2 class="section-title">Une stack complète — du modèle à l'infrastructure.</h2>
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-domain">IA & Data Science</div>
+      <div class="comp-title">Modélisation & MLOps</div>
+      <div class="comp-tags">
+        <span class="ctag">Python</span><span class="ctag">Scikit-learn</span><span class="ctag">TensorFlow</span>
+        <span class="ctag">Pandas · NumPy</span><span class="ctag">PySpark</span><span class="ctag">Docker</span>
+        <span class="ctag">RandomForest · CNN · LSTM</span>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-domain">Cloud & OpenShift</div>
+      <div class="comp-title">Infrastructure & Orchestration</div>
+      <div class="comp-tags">
+        <span class="ctag">Red Hat OpenShift</span><span class="ctag">IBM Cloud ROKS</span>
+        <span class="ctag">Kubernetes</span><span class="ctag">Helm · Kustomize</span>
+        <span class="ctag">Tekton · GitLab CI</span><span class="ctag">Dynatrace</span>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-domain">Systèmes & Infra</div>
+      <div class="comp-title">Expertise longue date</div>
+      <div class="comp-tags">
+        <span class="ctag">AIX · Power</span><span class="ctag">Solaris · LDOM</span>
+        <span class="ctag">SAN · EMC · NetApp</span><span class="ctag">Oracle DB</span>
+        <span class="ctag">TSM · Commvault</span><span class="ctag">Linux</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="certifs">
+  <div class="section-label">Certifications & diplômes</div>
+  <h2 class="section-title">Des preuves, pas des promesses.</h2>
+  <div class="certif-grid">
+    <div class="certif-card">
+      <div class="certif-dot"></div>
+      <div>
+        <div class="certif-name">Ingénieur AI Engineer — Diplôme reconnu RNCP</div>
+        <div class="certif-org">OpenClassrooms · 2025</div>
+        <div class="certif-status">Obtenu</div>
+      </div>
+    </div>
+    <div class="certif-card">
+      <div class="certif-dot pending"></div>
+      <div>
+        <div class="certif-name">Red Hat Certified Specialist OpenShift Administration — EX280</div>
+        <div class="certif-org">Red Hat · En cours de préparation</div>
+        <div class="certif-status">En cours · 2025–2026</div>
+      </div>
+    </div>
+    <div class="certif-card">
+      <div class="certif-dot"></div>
+      <div>
+        <div class="certif-name">IBM Cloud — ROKS HyperShift · IKS · COS</div>
+        <div class="certif-org">IBM Cloud · Expérience production depuis 2019</div>
+        <div class="certif-status">Expertise terrain</div>
+      </div>
+    </div>
+    <div class="certif-card">
+      <div class="certif-dot"></div>
+      <div>
+        <div class="certif-name">Formation initiale enseignement — Physique-Chimie</div>
+        <div class="certif-org">Éducation Nationale · 2 ans de stages pédagogiques</div>
+        <div class="certif-status">Fondation pédagogique</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sasu-section">
+  <div class="sasu-inner">
+    <div>
+      <div class="section-label">MJIA Consulting — SASU</div>
+      <h2 class="section-title" style="margin-bottom:1.5rem;">Travailler avec moi directement.</h2>
+      <p class="sasu-text">MJIA Consulting est ma structure indépendante. Pas d'intermédiaire, pas de commercial qui vend ce qu'un autre exécute. Vous me parlez — c'est moi qui interviens.</p>
+      <p class="sasu-text">Cette proximité est un avantage concret : réactivité, adaptation, engagement personnel sur chaque mission.</p>
+    </div>
+    <div>
+      <div class="section-label">Mes engagements</div>
+      <ul class="values-list">
+        <li>Transparence totale sur ce que je peux faire — et sur ce que je ne peux pas</li>
+        <li>Cadrage précis avant tout engagement financier de votre part</li>
+        <li>Livrables documentés, traçables, maintenables par vos équipes</li>
+        <li>Disponibilité pour les questions après livraison</li>
+        <li>Tarification claire, sans surprise, justifiée par la valeur produite</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Vous avez un projet, une formation,<br>une question — écrivez-moi.</h2>
+  <a href="contact.html" class="btn-dark">Prendre contact</a>
+</div>
+
+<footer>
+  <a href="index.html" class="logo" style="font-size:16px;">MJIA<span style="color:var(--gold)">.</span>Consulting</a>
+  <div class="footer-links">
+    <a href="ia-data.html">IA & Data</a><a href="formation.html">Formation</a><a href="apropos.html">À propos</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a>
+  </div>
+  <div class="footer-copy">© 2026 MJIA Consulting · SASU · mjia-consulting.fr</div>
+</footer>
+
+</body>
+</html>
